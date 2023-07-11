@@ -1,14 +1,14 @@
 #this file consists of code for instances and sg
 provider "aws" {
 region = "us-east-1"
-access_key = "AKIAW7KBR3YBF6QMWJGV"
-secret_key = "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"
+access_key = "AKIAWIV5LAGI22XTOTBY"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-04823729c75214919"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewkp01"
+  key_name        = "Aws-DevOps"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   user_data       = <<EOF
@@ -20,14 +20,14 @@ chkconfig httpd on
 echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "web-serverr-1"
+    Name = "TF_WS_01"
   }
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-04823729c75214919"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewkp01"
+  key_name        = "Aws-DevOps"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   user_data       = <<EOF
@@ -39,34 +39,34 @@ chkconfig httpd on
 echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "web-server-2"
+    Name = "TF_WS_02"
   }
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-04823729c75214919"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewkp01"
+  key_name        = "Aws-DevOps"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   tags = {
-    Name = "app-server-1"
+    Name = "TF_AS_01"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-04823729c75214919"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewkp01"
+  key_name        = "Aws-DevOps"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   tags = {
-    Name = "app-server-2"
+    Name = "TF_AS_02"
   }
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "tf_asg_007"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra77889900prodenv"
+  bucket = "tfprojnanis3bucket007"
 }
 
 resource "aws_iam_user" "seven" {
@@ -101,13 +101,13 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["user1", "user2", "user3", "user4"]
+default = ["nani1", "nani2", "nani3", "nani4"]
 }
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "us-east-1a"
-  size = 40
+  size = 20
   tags = {
-    Name = "ebs-001"
+    Name = "tf_ebs_007"
   }
 }
