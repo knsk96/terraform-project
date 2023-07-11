@@ -66,7 +66,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "tf_asg_007"
+  name = "tfasg007"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -108,6 +108,6 @@ resource "aws_ebs_volume" "eight" {
  availability_zone = "us-east-1a"
   size = 20
   tags = {
-    Name = "tf_ebs_007"
+    Name = "tfebs007"
   }
 }
