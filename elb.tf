@@ -1,5 +1,5 @@
 resource "aws_elb" "bar" {
-  name               = "tf_elb_0007"
+  name               = "tfelb0007"
   availability_zones = ["us-east-1a", "us-east-1b"]
 
   listener {
@@ -21,7 +21,7 @@ resource "aws_elb" "bar" {
   cross_zone_load_balancing = true
   idle_timeout              = 400
   tags = {
-    Name = "tf_elb_007"
+    Name = "tfelb007"
   }
 }
 
