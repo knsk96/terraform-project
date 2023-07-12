@@ -21,7 +21,7 @@ resource "aws_elb" "bar" {
   cross_zone_load_balancing = true
   idle_timeout              = 400
   tags = {
-    Name = "tfelbbar02"
+    Name = "elbtf18091996"
   }
 }
 
