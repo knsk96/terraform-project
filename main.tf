@@ -66,7 +66,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "tfasg007"
+  name = "tfasg05"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "tfprojnanis3bucket007"
+  bucket = "tfprojnanisris3bucket007"
 }
 
 resource "aws_iam_user" "seven" {
@@ -101,13 +101,13 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["nani1", "nani2", "nani3", "nani4"]
+default = ["nanisri1", "nanisri2", "nanisri3", "nanisri4"]
 }
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "us-east-1a"
-  size = 20
+  size = 40
   tags = {
-    Name = "tfebs007"
+    Name = "tfebsv007"
   }
 }
