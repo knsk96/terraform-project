@@ -66,7 +66,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "tfasg05"
+  name = "asg_tf"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "tfprojnanisris3bucket007"
+  bucket = "s3buckettf18091996"
 }
 
 resource "aws_iam_user" "seven" {
@@ -108,6 +108,6 @@ resource "aws_ebs_volume" "eight" {
  availability_zone = "us-east-1a"
   size = 40
   tags = {
-    Name = "tfebsv007"
+    Name = "ebsvtf"
   }
 }
