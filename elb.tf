@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
-  name               = "elbtf"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  name               = "awselbtf"
+  availability_zones = ["ap-south-1a", "ap-south-1b"]
 
   listener {
     instance_port     = 80
@@ -21,7 +21,7 @@ resource "aws_elb" "bar" {
   cross_zone_load_balancing = true
   idle_timeout              = 400
   tags = {
-    Name = "elbtf18091996"
+    Name = "awselbtf18091996"
   }
 }
 
