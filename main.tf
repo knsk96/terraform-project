@@ -6,7 +6,7 @@ secret_key = "CmwlkUSdPf+a8NMivWMi6GMrkXBT3pu01U2NN5aC"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-04823729c75214919"
+  ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
   key_name        = "AWS"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -25,7 +25,7 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-04823729c75214919"
+  ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
   key_name        = "AWS"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -44,7 +44,7 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-04823729c75214919"
+  ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
   key_name        = "AWS"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -55,7 +55,7 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-04823729c75214919"
+  ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
   key_name        = "AWS"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -66,7 +66,7 @@ resource "aws_instance" "four" {
 }
 
 resource "aws_security_group" "five" {
-  name = "elb-sg"
+  name = "awselb-sg"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -101,13 +101,13 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["user1", "user2", "user3", "user4"]
+default = ["knsk1", "knsk2", "knsk3", "knsk4"]
 }
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "ap-south-1a"
   size = 40
   tags = {
-    Name = "ebs-001"
+    Name = "awsebs-001"
   }
 }
