@@ -1,6 +1,17 @@
+Pipelinecode
+
+Accesskeys should be given in the dashboard 1st and then in pieline 
+    Dashboard --> Manage Jenkins --> Credentials --> System --> Global credentials (unrestricted) --> kind: secret key
+                                                                  -->  secret: give access key -->  id: acess key
+
+
 pipeline {
     agent any 
-    
+
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('accesskey')
+        AWS_SECRET_ACCESS_KEY = credentials('secretkey')
+    }
     stages {
         stage('checkout') {
             steps {
